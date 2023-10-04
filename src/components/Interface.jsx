@@ -1,10 +1,25 @@
+import { motion } from "framer-motion";
+
 const Section = (props) => {
     const { children } = props;
 
     return (
-        <section className="h-screen w-screen p-8 max-w-screen-2xl mx-auto flex flex-col items-start justify-center">
+        <motion.section className={`h-screen w-screen p-8 max-w-screen-2xl mx-auto flex flex-col items-start justify-center`}
+            initial = {{
+                opacity: 0,
+                y:50,
+            }}
+            whileInView={{
+                opacity: 1,
+                y:0,
+                transition: {
+                    duration: 0.7,
+                    delay: 0.5,
+                }
+            }}
+        >
             {children}
-        </section>
+        </motion.section>
     )
 }
 
@@ -21,24 +36,55 @@ export const Interface = () => {
     );
 };
 
+//SECCION ABOUT ME
+
 const AboutMeSection = () => {
     return (
         <Section>
             <h1 className="text-6xl font-extrabold leading-snug">
                 Hi, I'm <span className="bg-white px-1 italic text-green-500">CronoDan</span>
             </h1>
-            <p className="text-lg text-gray-600 mt-4">
+            <motion.p className="text-lg text-gray-600 mt-4"
+                initial={{
+                    opacity: 0,
+                    y: 25,
+                }}
+                whileInView={{
+                    opacity: 1,
+                    y:0,
+                }}
+                transition={{
+                    duration: 0.7,
+                    delay: 1,
+                }}
+            >
                 A full stack web-developer with a passion for
                 <br />
                 learning and creating.
-            </p>
-            <button className={`bg-blue-700 text-white py-4 px-8 rounded-lg font-bold text-lg mt-16`}>
+            </motion.p>
+            <motion.button className={`bg-blue-700 text-white py-4 px-8 rounded-lg font-bold text-lg mt-16`}
+                initial={{
+                    opacity: 0,
+                    y: 25,
+                }}
+                whileInView={{
+                    opacity: 1,
+                    y:0,
+                }}
+                transition={{
+                    duration: 0.7,
+                    delay: 1.5,
+                }}
+            >
                 Contact Me
-            </button>
+            </motion.button>
         </Section>
     )
 }
 
+//SECCION SKILLS
+
+//DICCIONARIO DE HABILIDADES CON SUS RESPECTIVOS NIVELES
 const skills = [
     {
         title: "HTML",
@@ -82,7 +128,7 @@ const skills = [
     },
 ];
 
-
+//DICCIONARIO DE LENGUAJES CON SUS RESPECTIVOS NIVELES
 const lenguages = [
     {
      title: "Spanish",
