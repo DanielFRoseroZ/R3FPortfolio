@@ -88,19 +88,19 @@ const AboutMeSection = () => {
 const skills = [
     {
         title: "HTML",
-        level: 90,
+        level: 80,
     },
     {
         title: "CSS",
-        level: 60,
+        level: 50,
     },
     {
         title: "JavaScript",
-        level: 70,
+        level: 60,
     },
     {
         title: "React",
-        level: 60,
+        level: 50,
     },
     {
         title: "React Three Fiber",
@@ -108,23 +108,23 @@ const skills = [
     },
     {
         title: "Node.js",
-        level: 30,
+        level: 20,
     },
     {
         title: "Python",
-        level: 70,
+        level: 60,
     },
     {
         title: "Django",
-        level: 70,
+        level: 60,
     },
     {
         title: "SQL",
-        level: 70,
+        level: 60,
     },
     {
         title: "MongoDB",
-        level: 40,
+        level: 30,
     },
 ];
 
@@ -136,7 +136,7 @@ const lenguages = [
     },
    {
     title: "English",
-    level: 80,
+    level: 75,
    } 
 ];
 
