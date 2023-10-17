@@ -42,7 +42,7 @@ const AboutMeSection = () => {
     return (
         <Section>
             <h1 className="text-6xl font-extrabold leading-snug">
-                Hi, I'm <span className="bg-white px-1 italic text-green-500">CronoDan</span>
+                Hi, I'm <span className="px-1 italic text-green-500">Daniel</span>
             </h1>
             <motion.p className="text-lg text-gray-600 mt-4"
                 initial={{
@@ -186,7 +186,7 @@ const SkillsSection = () => {
                     ))}
                 </div>
                 <div>
-                    <h2 className="text-5xl font-bold mt-10">Lenguages</h2>
+                    <h2 className="text-5xl font-bold mt-10">Languages</h2>
                     <div className=" mt-8 space-y-4">
                         {lenguages.map((lenguage, index) => (
                             <div className="w-64" key={index}>
@@ -239,7 +239,7 @@ const ContactSection = () => {
             <h2 className="text-5xl font-bold">Contact Me</h2>
             <div className="mt-8 p-8 rounded-md bg-white w-96 max-w-full border-8">
                 <form>
-                    <label for="name" className="font-medium text-gray-900 block mb-1">
+                    <label htmlFor="name" className="font-medium text-gray-900 block mb-1">
                         Name
                     </label>
                     <input
@@ -249,7 +249,7 @@ const ContactSection = () => {
                         className="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400"
                     />
                     <label 
-                        for="email"
+                        htmlFor="email"
                         className="font-medium text-gray-900 block mb-1 mt-8"
                     >
                         Email
@@ -261,7 +261,7 @@ const ContactSection = () => {
                         className="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400"
                     />
                     <label
-                        for="message"
+                        htmlFor="message"
                         className="font-medium text-gray-900 block mb-1 mt-8"
                     >
                         Message
