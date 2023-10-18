@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import { useAtom } from "jotai";
+import { currentProjectAtom, projects } from "./Projects";
 
 const Section = (props) => {
     const { children } = props;
@@ -23,14 +25,14 @@ const Section = (props) => {
     )
 }
 
-export const Interface = () => {
+export const Interface = (props) => {
+    const { setSection } = props;
+
     return (
         <div className="flex flex-col items-center w-screen">
-            <AboutMeSection />
+            <AboutMeSection setSection={setSection} />
             <SkillsSection />
-            <Section>
-                <h1>Projects</h1>
-            </Section>
+            <ProjectsSection />
             <ContactSection />
         </div>
     );
@@ -38,7 +40,9 @@ export const Interface = () => {
 
 //SECCION ABOUT ME
 
-const AboutMeSection = () => {
+const AboutMeSection = (props) => {
+    const { setSection } = props;
+
     return (
         <Section>
             <h1 className="text-6xl font-extrabold leading-snug">
@@ -62,7 +66,9 @@ const AboutMeSection = () => {
                 <br />
                 learning and creating.
             </motion.p>
-            <motion.button className={`bg-blue-700 text-white py-4 px-8 rounded-lg font-bold text-lg mt-16`}
+            <motion.button 
+                onClick={() => setSection(3)}
+                className={`bg-blue-700 text-white py-4 px-8 rounded-lg font-bold text-lg mt-16`}
                 initial={{
                     opacity: 0,
                     y: 25,
@@ -231,6 +237,40 @@ const SkillsSection = () => {
         </Section>
     )
 }
+
+//SECCION PROYECTOS
+
+const ProjectsSection = () => {
+    const [currentProject, setCurrentProject] = useAtom(currentProjectAtom);
+  
+    const nextProject = () => {
+      setCurrentProject((currentProject + 1) % projects.length);
+    };
+  
+    const previousProject = () => {
+      setCurrentProject((currentProject - 1 + projects.length) % projects.length);
+    };
+  
+    return (
+      <Section>
+        <div className="flex w-full h-full gap-8 items-center justify-center">
+          <button
+            className="hover:text-indigo-600 transition-colors"
+            onClick={previousProject}
+          >
+            ← Previous
+          </button>
+          <h2 className="text-5xl font-bold">Projects</h2>
+          <button
+            className="hover:text-indigo-600 transition-colors"
+            onClick={nextProject}
+          >
+            Next →
+          </button>
+        </div>
+      </Section>
+    );
+  };
 
 
 const ContactSection = () => {

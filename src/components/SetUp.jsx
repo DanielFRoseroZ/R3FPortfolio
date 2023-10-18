@@ -6,7 +6,6 @@ import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 
 export function SetUp(props) {
-  const { section } = props; 
   const { nodes, materials } = useGLTF("/models/setup.gltf");
   return (
     <group {...props} dispose={null}>
@@ -246,7 +245,7 @@ export function SetUp(props) {
         receiveShadow
         geometry={nodes.Keyboard1.geometry}
         material={materials.lambert3SG}
-        position={[-1.16, 5.873, -6.643]}
+        position={[-1.059, 5.883, -6.853]}
         scale={0.007}
       />
       <mesh
@@ -323,7 +322,7 @@ export function SetUp(props) {
           material={materials.blinn5SG}
         />
       </group>
-      <group position={[1.678, 5.883, -6.618]} scale={8.484}>
+      <group position={[1.198, 5.883, -6.618]} scale={8.484}>
         <mesh
           castShadow
           receiveShadow
